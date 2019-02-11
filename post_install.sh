@@ -12,4 +12,11 @@ mkdir -p $_DATA_LOCATION
 # make "dockett" the owner of the data location
 chown -R $_DOCKETT_USER:$_DOCKETT_USER /app-data
 
+# give only "docket" user read, write, execute permissions
 chmod -R 700 /app-data
+
+# enable sshd to start at boot
+sysrc "sshd_enable=YES"
+
+# start the sshd service
+service sshd start
