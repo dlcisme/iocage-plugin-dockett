@@ -10,4 +10,6 @@ echo $_DOCKETT_PASSWORD | pw user add -n $_DOCKETT_USER -s /bin/sh -m -h 0 -c "U
 mkdir -p $_DATA_LOCATION
 
 # make "dockett" the owner of the data location
-chown -R $_DOCKETT_USER:$_DOCKETT_USER $_DATA_LOCATION
+chown -R $_DOCKETT_USER:$_DOCKETT_USER /app-data
+
+chmod -R 700 /app-data
